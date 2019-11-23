@@ -135,6 +135,13 @@ html,
 body {
   height: 100%;
 }
+.flex-mixin {
+  display: flex;
+  text-align: center;
+}
+.width-mixin {
+  width: 48%;
+}
 body {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
@@ -173,7 +180,7 @@ header h1 {
 }
 header nav {
   display: flex;
-  flex-direction: row;
+  text-align: center;
   justify-content: space-between;
   margin: 0 25px;
   color: white;
@@ -194,13 +201,129 @@ header nav a {
   display: flex;
   justify-content: space-between;
 }
+.about-first div {
+  width: 48%;
+}
 .about-first h2 {
   padding-bottom: 25px;
 }
 .about-first p {
   padding-bottom: 15px;
 }
-
-.skills h1{
+.skills {
+  margin-bottom: 50px;
+}
+.skills h1 {
+  font-size: 5rem;
   text-align: center;
+}
+.skills .row {
+  display: flex;
+  text-align: center;
+}
+.skills .column {
+  width: 48%;
+  justify-content: space-evenly;
+}
+.skills .column h3 {
+  font-size: 2rem;
+}
+.skills ul {
+  font-size: 18px;
+}
+.history h1 {
+  font-size: 5rem;
+  text-align: center;
+}
+.contact-icons {
+  display: flex;
+  justify-content: space-around;
+  font-size: xx-large;
+  color: white;
+}
+.contact-icons a {
+  color: white;
+}
+@media (max-width: 590px) {
+  .skills h1 {
+    font-size: 3rem;
+  }
+  .skills column {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .skills column div {
+    margin-left: 30%;
+  }
+  .skills column h3 {
+    font-size: 2.3rem;
+    font-weight: 400;
+  }
+}
+@media (max-width: 590px) {
+  .skills column h3 {
+    font-size: 2rem;
+  }
+  .skills column li {
+    width: 20vw;
+    padding-top: 1rem;
+    line-height: 2.5;
+    font-size: 2vw;
+    list-style-type: circle ;
+  }
+}
+@media (max-width: 590px) {
+  .skills column li {
+    font-size: 1.5rem;
+  }
+  .history h1 {
+    margin-left: 15rem;
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    margin-left: 30%;
+  }
+  .history table {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .history tr,
+  .history th,
+  .history td {
+    border: 0.1rem solid black;
+    text-align: center;
+    font-size: 2rem;
+    background: #f7f7f7;
+  }
+  .contact div {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: dodgerblue;
+  }
+  .contact h1 {
+    margin-left: 15rem;
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    margin-left: 30%;
+  }
+}
+@media (max-width: 590px) and (max-width: 590px) {
+  .history h1 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 590px) and (max-width: 590px) {
+  .history table {
+    margin-left: 2rem;
+  }
+}
+@media (max-width: 590px) {
+  .contactme h1 {
+    font-size: 3rem;
+  }
+  .contactme .email-me {
+    width: 10rem;
+  }
+  .contactme .email-me:hover {
+    opacity: 0.5;
+  }
 }
