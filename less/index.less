@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -23,9 +23,10 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	font-family: 'Rajdhani', sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -57,3 +58,240 @@ html, body {
     height: 100%;
 }
 
+//--------CSS VARIABLES----------\\
+@background-1:#f1f1f1;
+@background-2: dodgerblue;
+
+//-------------------------------\\
+
+//---------Mix-in--------//
+.flex-mixin{
+	display: flex;
+	text-align: center;
+
+}
+
+.width-mixin{
+	width:48%;
+}
+//------------------------//
+
+body{
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradientBG 10s ease infinite;
+	}
+
+	@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+
+	p{
+		color:white;
+	}
+}
+
+h1{
+		font-size: 3rem;
+}
+
+h2{
+	font-size: 2rem;
+	font-weight: 300;
+
+}
+
+button{
+	background-color: red;
+	border: 2px solid black;
+	border-radius: 25px;
+}
+
+header {
+
+	h1{
+		text-align: center;
+		margin: 10%;
+    font-weight: 700;
+	}
+
+	nav{
+		.flex-mixin;
+		justify-content: space-between;
+		margin: 0 25px;
+		color: white;
+
+		a{
+			font-size: 1.5rem;
+			color: white;
+		}
+	}
+}
+
+.about {
+	margin-top: 3rem;
+
+	img{
+		margin-left: 10%;
+		width: 100%;
+	}
+}
+
+.about-first{
+	margin: 3rem 1.5rem;
+	display: flex;
+	justify-content: space-between;
+
+	div{
+		.width-mixin;
+	}
+
+	h2{
+		padding-bottom: 25px;
+	}
+
+	p{
+		padding-bottom: 15px;
+	}
+}
+
+.skills{
+	margin-bottom:50px;
+
+		h1 {
+	  font-size: 5rem;
+		text-align: center;
+	}
+
+		.row{
+			.flex-mixin;
+		}
+
+	.column {
+	  .width-mixin;
+	  justify-content: space-evenly;
+
+		h3{
+			font-size: 2rem;
+		}
+	}
+
+	ul{
+		font-size: 18px;
+	}
+}
+
+.history{
+	h1 {
+	font-size: 5rem;
+	text-align: center;
+	}
+
+}
+
+.contact-icons{
+	display: flex;
+    justify-content: space-around;
+    font-size: xx-large;
+		color:white;
+
+		a{
+			color:white;
+		}
+}
+
+
+@media (max-width: 590px) {
+  .skills h1 {
+    font-size: 3rem;
+  }
+	.skills column {
+	  display: flex;
+	  justify-content: space-evenly;
+	}
+	.skills column div {
+	  margin-left: 30%;
+	}
+	.skills column h3 {
+	  font-size: 2.3rem;
+	  font-weight: 400;
+	}
+}
+
+@media (max-width: 590px) {
+  .skills column h3 {
+    font-size: 2rem;
+  }
+	.skills column li {
+	  width: 20vw;
+	  padding-top: 1rem;
+	  line-height: 2.5;
+	  font-size: 2vw;
+	  list-style-type: circle ;
+	}
+}
+
+@media (max-width: 590px) {
+  .skills column li {
+    font-size: 1.5rem;
+  }
+	.history h1 {
+	  margin-left: 15rem;
+	  font-size: 5rem;
+	  margin-bottom: 2rem;
+	  margin-left: 30%;
+	}
+	@media (max-width: 590px) {
+	  .history h1 {
+	    font-size: 3rem;
+	  }
+	}
+	.history table {
+	  margin: 0 auto;
+	  width: 100%;
+	}
+	@media (max-width: 590px) {
+	  .history table {
+	    margin-left: 2rem;
+	  }
+	}
+	.history tr,
+	.history th,
+	.history td {
+	  border: 0.1rem solid black;
+	  text-align: center;
+	  font-size: 2rem;
+	  background: #f7f7f7;
+	}
+	.contact div {
+	  display: flex;
+	  justify-content: space-evenly;
+		background-color: @background-2;
+	}
+	.contact h1 {
+	  margin-left: 15rem;
+	  font-size: 5rem;
+	  margin-bottom: 2rem;
+	  margin-left: 30%;
+	}
+
+}
+
+@media (max-width: 590px) {
+  .contactme h1 {
+    font-size: 3rem;
+  }
+	.contactme .email-me {
+	  width: 10rem;
+	}
+	.contactme .email-me:hover {
+	  opacity: 0.5;
+	}
+}
